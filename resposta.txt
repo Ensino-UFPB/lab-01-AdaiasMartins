@@ -1,1 +1,79 @@
-Coloque aqui todas as respostas das práticas indicadas no README.md
+Questão 1:
+1- rede: 172.18.0.0
+mascara: 255.255.0.0
+
+2-0.0.0.0 
+
+3- 172.18.0.0/24
+
+Questão 2:
+1- 172.18.0.2
+
+2- 255.244.0.0/16
+
+3- eth0
+
+Questão 3:
+nslookup www.google.com
+ip: 172.217.30.68
+nslookup www.whitehouse.gov
+ip: 192.0.66.51
+nslookup www.rnp.br
+104.18.26.22
+104.18.27.22
+nslookup www.ufpb.br
+ip: 150.165.254.52
+
+Questão 4:
+1- 127.0.0.1: 0.032 ms
+  172.18.0.2: 0.036 ms
+
+2- `ping www.ufpb.br`: 40.473 ms
+    `ping www.yahoo.com`: 169.202 ms
+    `ping www.brasil.gov.br`: 75.913 ms
+    `ping www.dce.ufpb.br`: unknown host
+
+    o endereço do dce apresentou unknow host
+
+3- `ping www.google.com`: 58.125 ms
+    `ping www.rnp.br`: 58.755 ms
+    `ping www.whitehouse.gov`: 57.905 ms
+
+    coisas que podem influenciar são a distancia geografica, numero de saltos, congestionamento e infraestrutura da rede
+
+Questão 5:
+1- O comando traceroute pode não receber respostas de alguns roteadores ao longo do caminho porque eles podem estar configurados para ignorar pacotes ICMP TTL Expired ou bloqueados por firewall, o que não significa necessariamente que há um problema na rede, pois o tráfego pode estar fluindo normalmente.
+
+Questão 6: 
+1- Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.11:43359        0.0.0.0:*               LISTEN      -
+udp        0      0 127.0.0.11:47444        0.0.0.0:*                           -
+
+2- Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+default         172.18.0.1      0.0.0.0         UG        0 0          0 eth0
+172.18.0.0      0.0.0.0         255.255.0.0     U         0 0          0 eth0
+
+embora a estrutura de exibição seja parecida, os comandos retornaram informações diferentes
+
+Questão 7:
+1- O servidor não respondeu, dando a seguinte mensagem: Connection closed by foreign host.
+
+2- tambem não consegui a conexão, esta foi a mensagem: Server lookup failure:  www.dce.ufpb.br:21, Name or service not known
+
+Questão 8:
+1- O mtr é útil para diagnosticar problemas de latência e perdas de pacotes ao longo da rota até um destino, combinando ping e traceroute em tempo real.
+
+2- Pode ser usado para identificar onde há congestionamento ou perda de pacotes em uma rede, auxiliando na resolução de problemas de conectividade.
+
+3- Host                                                                                                                                                                                  Loss%   Snt   Last   Avg  Best  Wrst StDev 
+ 1. 172.18.0.1   0.0%    28    0.1   0.1   0.0   0.1   0.0
+ 2. 172.217.28.164  3.7%    27   58.4  59.5  57.3  87.6   5.7
+
+ Host                                                                                                                                                                                  Loss%   Snt   Last   Avg  Best  Wrst StDev 
+ 1. 172.18.0.1  0.0%     7    0.1   0.1   0.0   0.1   0.0
+ 2. 150.165.254.52  0.0%     6   37.8  27.7  25.0  37.8   5.0
+
+
+4- Ao interpretar os resultados, deve-se observar os tempos médios de resposta (latência) e o percentual de perda de pacotes em cada nó da rede. Altos valores podem indicar um gargalo ou um problema em um ponto específico.

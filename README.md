@@ -64,7 +64,6 @@ Utilize o comando `ip a` para verificar as questões abaixo:
 1. **Qual o IP da interface de rede?**
 2. **Qual a rede e a máscara?**
 4. **Qual o nome da interface de rede principal?**
-
 ---
 
 ## **Questão 3. nslookup **
